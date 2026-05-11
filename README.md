@@ -17,12 +17,12 @@ Plan trips, track expenses, check weather, translate languages, and search fligh
 
 ## 📸 Screenshots
 
-| Landing Page | Dashboard | Trip Detail |
-|:---:|:---:|:---:|
+|                  Landing Page                  |                  Dashboard                   |               Trip Detail               |
+| :--------------------------------------------: | :------------------------------------------: | :-------------------------------------: |
 | Editorial-style homepage with destination grid | Analytics dashboard with trip stats & charts | Detailed trip view with budget tracking |
 
-| Expense Tracker | Weather Forecast | Live Translator |
-|:---:|:---:|:---:|
+|           Expense Tracker           |        Weather Forecast         |         Live Translator         |
+| :---------------------------------: | :-----------------------------: | :-----------------------------: |
 | Pie chart breakdown with CSV export | 5-day forecast with travel tips | Powered by Google Translate API |
 
 ---
@@ -30,23 +30,27 @@ Plan trips, track expenses, check weather, translate languages, and search fligh
 ## ✨ Features
 
 ### 🗺️ Trip Management
+
 - Create, edit, and delete trips with destination autocomplete
 - Status tracking — Planned, Ongoing, Completed
 - Trip images fetched automatically from destination database
 - Budget allocation per trip
 
 ### 💰 Expense Tracker
+
 - Add expenses by category — Food, Transport, Accommodation, Activities, Shopping
 - Budget utilization progress bar with overspend alerts
 - Category-wise spending breakdown with interactive pie charts
 - **Export expenses to CSV** for offline records
 
 ### 🌤️ Weather Forecast
+
 - Real-time weather data powered by **OpenWeatherMap API**
 - 5-day forecast with weather icons
 - Smart travel tips based on temperature and conditions
 
 ### 🌐 Live Translator
+
 - Instant text translation powered by **Google Translate API** (`google-translate-api-x`)
 - 28+ languages supported including Hindi, Spanish, French, Japanese, Arabic
 - Auto language detection
@@ -54,13 +58,15 @@ Plan trips, track expenses, check weather, translate languages, and search fligh
 - Copy to clipboard with one click
 
 ### ✈️ Flight & Hotel Booking
+
 - Search flights by origin, destination, and dates
 - Search hotels by location, check-in/check-out, and guests
 - Visual flight timeline with airline info and pricing
 - Hotel cards with ratings, amenities, and booking CTA
-- *(Currently uses mock data — designed for real API integration)*
+- _(Currently uses mock data — designed for real API integration)_
 
 ### 🔐 Authentication & Security
+
 - JWT-based authentication with token auto-refresh
 - Secure password hashing with `bcryptjs`
 - Protected routes with middleware guard
@@ -68,6 +74,7 @@ Plan trips, track expenses, check weather, translate languages, and search fligh
 - Security headers via `helmet` + API rate limiting
 
 ### 📊 Dashboard Analytics
+
 - Trip statistics — Total, Completed, Planned, Budget overview
 - Total spending analytics across all trips
 - Monthly trip distribution bar chart (Recharts)
@@ -79,29 +86,31 @@ Plan trips, track expenses, check weather, translate languages, and search fligh
 ## 🛠️ Tech Stack
 
 ### Frontend
-| Technology | Purpose |
-|---|---|
-| **React 19** | Component-based UI framework |
-| **Redux + Thunk** | Global state management with async actions |
-| **React Router v7** | Client-side routing with nested layouts |
-| **Material-UI v6** | Pre-built UI components and theming |
-| **Recharts** | Data visualization (Bar & Pie charts) |
-| **Axios** | HTTP client with JWT interceptors |
-| **React-Toastify** | Toast notification system |
-| **Leaflet** | Interactive maps |
+
+| Technology          | Purpose                                    |
+| ------------------- | ------------------------------------------ |
+| **React 19**        | Component-based UI framework               |
+| **Redux + Thunk**   | Global state management with async actions |
+| **React Router v7** | Client-side routing with nested layouts    |
+| **Material-UI v6**  | Pre-built UI components and theming        |
+| **Recharts**        | Data visualization (Bar & Pie charts)      |
+| **Axios**           | HTTP client with JWT interceptors          |
+| **React-Toastify**  | Toast notification system                  |
+| **Leaflet**         | Interactive maps                           |
 
 ### Backend
-| Technology | Purpose |
-|---|---|
-| **Node.js + Express.js** | REST API server |
-| **MongoDB + Mongoose** | NoSQL database with schema validation |
-| **JWT (jsonwebtoken)** | Token-based authentication |
-| **bcryptjs** | Password hashing |
-| **helmet** | Security HTTP headers |
-| **express-rate-limit** | API rate limiting (100 req/15min) |
-| **google-translate-api-x** | Free Google Translate integration |
-| **cors** | Cross-origin resource sharing |
-| **dotenv** | Environment variable management |
+
+| Technology                 | Purpose                               |
+| -------------------------- | ------------------------------------- |
+| **Node.js + Express.js**   | REST API server                       |
+| **MongoDB + Mongoose**     | NoSQL database with schema validation |
+| **JWT (jsonwebtoken)**     | Token-based authentication            |
+| **bcryptjs**               | Password hashing                      |
+| **helmet**                 | Security HTTP headers                 |
+| **express-rate-limit**     | API rate limiting (100 req/15min)     |
+| **google-translate-api-x** | Free Google Translate integration     |
+| **cors**                   | Cross-origin resource sharing         |
+| **dotenv**                 | Environment variable management       |
 
 ---
 
@@ -246,60 +255,67 @@ Open your browser at **http://localhost:3000**
 ## 📡 API Endpoints
 
 ### Authentication
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `POST` | `/api/auth/register` | Register a new user | ❌ |
-| `POST` | `/api/auth/login` | Login and receive JWT token | ❌ |
-| `GET` | `/api/auth/profile` | Get current user profile | ✅ |
-| `PUT` | `/api/auth/profile` | Update user profile | ✅ |
-| `PUT` | `/api/auth/change-password` | Change password | ✅ |
+
+| Method | Endpoint                    | Description                 | Auth |
+| ------ | --------------------------- | --------------------------- | ---- |
+| `POST` | `/api/auth/register`        | Register a new user         | ❌   |
+| `POST` | `/api/auth/login`           | Login and receive JWT token | ❌   |
+| `GET`  | `/api/auth/profile`         | Get current user profile    | ✅   |
+| `PUT`  | `/api/auth/profile`         | Update user profile         | ✅   |
+| `PUT`  | `/api/auth/change-password` | Change password             | ✅   |
 
 ### Trips
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `POST` | `/api/trips` | Create a new trip | ✅ |
-| `GET` | `/api/trips` | Get all user trips | ✅ |
-| `GET` | `/api/trips/:id` | Get trip by ID | ✅ |
-| `PUT` | `/api/trips/:id` | Update a trip | ✅ |
-| `DELETE` | `/api/trips/:id` | Delete a trip | ✅ |
+
+| Method   | Endpoint         | Description        | Auth |
+| -------- | ---------------- | ------------------ | ---- |
+| `POST`   | `/api/trips`     | Create a new trip  | ✅   |
+| `GET`    | `/api/trips`     | Get all user trips | ✅   |
+| `GET`    | `/api/trips/:id` | Get trip by ID     | ✅   |
+| `PUT`    | `/api/trips/:id` | Update a trip      | ✅   |
+| `DELETE` | `/api/trips/:id` | Delete a trip      | ✅   |
 
 ### Expenses
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `GET` | `/api/expenses` | Get all user expenses (analytics) | ✅ |
-| `POST` | `/api/expenses` | Create a new expense | ✅ |
-| `GET` | `/api/expenses/trip/:tripId` | Get expenses for a specific trip | ✅ |
-| `GET` | `/api/expenses/:id` | Get expense by ID | ✅ |
-| `PUT` | `/api/expenses/:id` | Update an expense | ✅ |
-| `DELETE` | `/api/expenses/:id` | Delete an expense | ✅ |
-| `GET` | `/api/expenses/summary/:tripId` | Expense summary by category | ✅ |
+
+| Method   | Endpoint                        | Description                       | Auth |
+| -------- | ------------------------------- | --------------------------------- | ---- |
+| `GET`    | `/api/expenses`                 | Get all user expenses (analytics) | ✅   |
+| `POST`   | `/api/expenses`                 | Create a new expense              | ✅   |
+| `GET`    | `/api/expenses/trip/:tripId`    | Get expenses for a specific trip  | ✅   |
+| `GET`    | `/api/expenses/:id`             | Get expense by ID                 | ✅   |
+| `PUT`    | `/api/expenses/:id`             | Update an expense                 | ✅   |
+| `DELETE` | `/api/expenses/:id`             | Delete an expense                 | ✅   |
+| `GET`    | `/api/expenses/summary/:tripId` | Expense summary by category       | ✅   |
 
 ### Weather
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `GET` | `/api/weather/current/:location` | Current weather for a city | ❌ |
-| `GET` | `/api/weather/forecast/:location` | 5-day weather forecast | ❌ |
+
+| Method | Endpoint                          | Description                | Auth |
+| ------ | --------------------------------- | -------------------------- | ---- |
+| `GET`  | `/api/weather/current/:location`  | Current weather for a city | ❌   |
+| `GET`  | `/api/weather/forecast/:location` | 5-day weather forecast     | ❌   |
 
 ### Translator
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `POST` | `/api/translator/translate` | Translate text between languages | ❌ |
-| `GET` | `/api/translator/languages` | Get supported language list | ❌ |
+
+| Method | Endpoint                    | Description                      | Auth |
+| ------ | --------------------------- | -------------------------------- | ---- |
+| `POST` | `/api/translator/translate` | Translate text between languages | ❌   |
+| `GET`  | `/api/translator/languages` | Get supported language list      | ❌   |
 
 ### Destinations
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `GET` | `/api/destinations` | Get all destinations | ❌ |
-| `GET` | `/api/destinations/search?q=` | Search destinations by name | ❌ |
-| `GET` | `/api/destinations/:id` | Get destination by ID | ❌ |
+
+| Method | Endpoint                      | Description                 | Auth |
+| ------ | ----------------------------- | --------------------------- | ---- |
+| `GET`  | `/api/destinations`           | Get all destinations        | ❌   |
+| `GET`  | `/api/destinations/search?q=` | Search destinations by name | ❌   |
+| `GET`  | `/api/destinations/:id`       | Get destination by ID       | ❌   |
 
 ### Booking
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| `POST` | `/api/booking/flights/search` | Search available flights | ✅ |
-| `POST` | `/api/booking/hotels/search` | Search available hotels | ✅ |
-| `POST` | `/api/booking/flights/book` | Book a flight | ✅ |
-| `POST` | `/api/booking/hotels/book` | Book a hotel | ✅ |
+
+| Method | Endpoint                      | Description              | Auth |
+| ------ | ----------------------------- | ------------------------ | ---- |
+| `POST` | `/api/booking/flights/search` | Search available flights | ✅   |
+| `POST` | `/api/booking/hotels/search`  | Search available hotels  | ✅   |
+| `POST` | `/api/booking/flights/book`   | Book a flight            | ✅   |
+| `POST` | `/api/booking/hotels/book`    | Book a hotel             | ✅   |
 
 ---
 
@@ -329,22 +345,30 @@ Open your browser at **http://localhost:3000**
 ## 🗄️ Database Models
 
 ### User
+
 ```javascript
-{ name, email, password, createdAt }
+{
+  (name, email, password, createdAt);
+}
 ```
 
 ### Trip
+
 ```javascript
 { user, destination, startDate, endDate, description, budget, status,
   activities[], accommodation{}, transportation{}, images[], notes }
 ```
 
 ### Expense
+
 ```javascript
-{ user, trip, amount, currency, category, description, date }
+{
+  (user, trip, amount, currency, category, description, date);
+}
 ```
 
 ### Destination
+
 ```javascript
 { name, city, state, category, description, images[],
   entrance_fee_inr, best_time_to_visit, rating }
@@ -368,11 +392,27 @@ Open your browser at **http://localhost:3000**
 
 ## 🤝 Contributing
 
+We welcome contributions from the community! Please read our [Contributing Guidelines](CONTRIBUTING.md) to understand our workflow, including how to format pull requests, commit messages, and run tests.
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+
+### Quick Start
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+---
+
+## 📞 Support & Contact
+
+If you have any questions, need help, or want to discuss features, please feel free to:
+
+- Open a [GitHub Discussion](../../discussions)
+- Create an [Issue](../../issues)
+- Or reach out via email.
 
 ---
 

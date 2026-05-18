@@ -2,6 +2,7 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const sendEmail = require("../utils/sendEmail");
+const { getOtpEmailTemplate, getPasswordResetTemplate } = require("../utils/emailTemplates");
 
 // Register a new user
 exports.register = async (req, res, next) => {
@@ -42,6 +43,7 @@ exports.register = async (req, res, next) => {
         email: user.email,
         subject: "Verify Your Email - PackGo",
         message: `Welcome to PackGo! Your 6-digit verification code is: ${otp}\n\nThis code will expire in 5 minutes.`,
+        html: getOtpEmailTemplate(user.name, otp, "Welcome to PackGo! Your one time verification code is:"),
       });
     } catch (emailErr) {
       console.error("Failed to send registration email:", emailErr);
@@ -135,6 +137,7 @@ exports.login = async (req, res, next) => {
             email: user.email,
             subject: "Verify Your Email - PackGo",
             message: `Your 6-digit verification code is: ${otp}\n\nThis code will expire in 5 minutes.`,
+            html: getOtpEmailTemplate(user.name, otp, "Your one time verification code is:"),
           });
         } catch (emailErr) {
           console.error("Failed to send verification email on login:", emailErr);
@@ -267,6 +270,7 @@ exports.forgotPassword = async (req, res, next) => {
         email: user.email,
         subject: "Password reset token",
         message,
+        html: getPasswordResetTemplate(user.name, resetUrl),
       });
 
       res.status(200).json({ success: true, data: "Email sent successfully" });
@@ -470,6 +474,7 @@ exports.resendOtp = async (req, res, next) => {
         email: user.email,
         subject: "Verify Your Email - PackGo",
         message: `Your new 6-digit verification code is: ${otp}\n\nThis code will expire in 5 minutes.`,
+        html: getOtpEmailTemplate(user.name, otp, "Your new one time verification code is:"),
       });
     } catch (emailErr) {
       console.error("Failed to send new verification email:", emailErr);
@@ -634,6 +639,7 @@ exports.requestEmailChange = async (req, res, next) => {
         email,
         subject: "Verify Your New Email - PackGo",
         message: `Your 6-digit verification code to update your email to ${email} is: ${otp}\n\nThis code will expire in 5 minutes.`,
+        html: getOtpEmailTemplate(currentUser.name, otp, `Your 6-digit verification code to update your email to <strong>${email}</strong> is:`),
       });
     } catch (emailErr) {
       console.error("Failed to send email change verification email:", emailErr);

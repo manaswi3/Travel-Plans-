@@ -553,6 +553,32 @@ git push origin feature/your-amazing-feature
 
 ---
 
+## 💖 Contributors
+
+Thanks to all the amazing people who contribute to **Travel-Plans** 🚀
+
+<p align="center">
+  <a href="https://github.com/hitesh-kumar123/Travel-Plans-/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=hitesh-kumar123/Travel-Plans-" alt="Contributors"/>
+  </a>
+</p>
+
+<br>
+
+## ⭐ Project Support
+
+<p align="center">
+  <a href="https://github.com/hitesh-kumar123/Travel-Plans-/stargazers">
+    <img src="https://img.shields.io/github/stars/hitesh-kumar123/Travel-Plans-?style=social" alt="Stars">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/hitesh-kumar123/Travel-Plans-/network/members">
+    <img src="https://img.shields.io/github/forks/hitesh-kumar123/Travel-Plans-?style=social" alt="Forks">
+  </a>
+</p>
+
+---
+
 ## 📄 License
 
 This project is licensed under the **MIT License**.  

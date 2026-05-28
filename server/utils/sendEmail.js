@@ -30,6 +30,7 @@ const buildTransporter = async () => {
       host: testAccount.smtp.host,
       port: testAccount.smtp.port,
       secure: testAccount.smtp.secure,
+      family: 4,
       auth: {
         user: testAccount.user,
         pass: testAccount.pass,
@@ -69,6 +70,7 @@ const buildTransporter = async () => {
     host,
     port,
     secure,
+    family: 4,
     auth: {
       user,
       pass,
